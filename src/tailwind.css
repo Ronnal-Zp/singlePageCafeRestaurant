@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+
+
+.background{
+    @apply h-56 md:h-80 md:bg-center bg-cover bg-no-repeat bg-bottom;
+}
+
+.cards{
+    @apply flex flex-wrap justify-evenly;
+}
+
+
+.card{
+    @apply mx-2 mt-4 rounded-lg md:w-1/3  md:flex md:bg-white;
+}
+
+.card__img{
+    @apply md:w-40 w-full h-full object-cover object-center rounded-lg md:rounded-r-none;
+}
+
+.card__content{
+    @apply flex flex-col justify-center relative -mt-2 mx-2 p-2 shadow-lg rounded-lg bg-orange-300 md:bg-transparent;
+}
+
+.card__title{
+    @apply text-2xl tracking-tight font-semibold uppercase text-gray-900;
+}
+
+.card__description{
+    @apply text-gray-700 leading-snug;
+}
+
+.card__price{
+    @apply mt-2 text-sm font-semibold text-gray-700;
+}
+
+.card__review{
+    @apply mt-2 text-xs text-yellow-700;
+}
+
+
+
+.form__input{
+    @apply w-full leading-snug py-1 px-4 border rounded placeholder-primary border-blue-300 bg-gray-200 ;
+}
+
+.form__input:hover{
+    @apply hover:bg-white;
+}
+
+.form__input:focus{
+    @apply focus:outline-none;
+}
+
+.btn{
+    @apply  mx-auto px-2.5 py-1.5 rounded shadow-lg block bg-gray-500;
+}
+
+.btn:hover{
+    @apply hover:bg-gray-700;
+}
+
+@tailwind utilities;
+
+

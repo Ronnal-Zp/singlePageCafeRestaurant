@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Café restaurant</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/2516068d63.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+  <body>
+    <nav x-data="{ open: false }" class="fixed z-10 w-full bg-primary">
+      <header class="flex justify-between items-center text-white  ">
+        <div>
+          <img class="ml-4 h-10" src="./images/coffee-logo.png" alt="logo" />
+        </div>
+        <div @click="open = true" class="text-3xl pr-2 cursor-pointer">&equiv;</div>
+      </header>
+
+      <div x-show="open" @click.away="open = false">
+        <div class="my-1 mx-2">
+          <input class="form__input" type="search" placeholder="Busqueda..">
+        </div>
+        <div class="mx-2 py-4 flex flex-wrap items-center justify-around">
+          <div class="flex">
+            Precio:
+            <div class="ml-2 cursor-pointer">$</div>
+            <div class="ml-2 text-secondary cursor-pointer">$$</div>
+            <div class="ml-2 cursor-pointer">$$$</div>
+          </div>
+          <div class="flex">
+            <div> 
+              Calificaión:
+            </div>
+            <div class="ml-2 text-secondary cursor-pointer">&starf;</div>  
+            <div class="ml-px text-secondary cursor-pointer">&starf;</div>  
+            <div class="ml-px text-secondary cursor-pointer">&starf;</div>  
+            <div class="ml-px text-secondary cursor-pointer">&starf;</div>  
+            <div class="ml-px">&starf;</div>  
+          </div>
+          <div>
+            <button class="btn btn:hover">Filtrar</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="border-gray-400 pb-5">
+      <div
+        class="background "
+        style="
+          background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');">
+      </div>
+
+      <div class="cards">
+
+        <div class="card">
+          <div>
+            <img
+              class="card__img"
+              src="./images/cafe-negro.jpg"
+              alt="cafe-negro"
+            />
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">Café negro</h2>
+            <p class="card__description">Con granos tostados de calidad.</p>
+            <div class="card__price">$7.00</div>
+            <div class="card__review">&starf;&starf;&starf;&star;&star; / 36 Reseñas</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <img
+              class="card__img"
+              src="./images/cafe-capucchino.jpg"
+              alt="cafe-capucchino"
+            />
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">Capucchino</h2>
+            <p class="card__description">Café expreso y leche montada con vapor.</p>
+            <div class="card__price">$7.00</div>
+            <div class="card__review">&starf;&starf;&starf;&star;&star; / 28 Reseñas</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <img
+              class="card__img"
+              src="./images/cafe-mocacchino.jpg"
+              alt="cafe-mocacchino"
+            />
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">Mocacchino</h2>
+            <p class="card__description">Café con leche y chocolate.</p>
+            <div class="card__price">$5.00</div>
+            <div class="card__review">&starf;&starf;&starf;&star;&star; / 26 Reseñas</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div>
+            <img
+              class="card__img"
+              src="./images/chocolate.jpg"
+              alt="chocolate"
+            />
+          </div>
+          <div class="card__content">
+            <h2 class="card__title">Chocolate</h2>
+            <p class="card__description">Chocolatada mezclada con leche en polvo.</p>
+            <div class="card__price">$7.00</div>
+            <div class="card__review">&starf;&starf;&starf;&starf;&star; / 36 Reseñas</div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div>
+        <form class="px-4 md:w-2/3 mt-6 mx-auto"> 
+          <div>
+            <label class="block" for="nombre">Nombre</label>
+            <input class="form__input form__input:focus form__input:hover" type="text" id="nombre" placeholder="Tu nombre aqui..">
+          </div>
+          
+          <div>
+            <label class="block" for="email">Email</label>
+            <input class="form__input form__input:focus form__input:hover" type="email" id="email" placeholder="Tu email aqui..">
+          </div>
+
+          <div class="">
+            <label class="block" for="txtarea">Comentarios</label>
+            <textarea class="form__input form__input:focus form__input:hover" id="txtarea" cols="30" rows="10"></textarea>
+          </div>
+          
+          <div>
+            <button class="btn btn:hover">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer
+      class="md:flex justify-evenly items-center w-full bottom-0 bg-primary"
+    >
+      <div class="my-2 ml-6">
+        <div class="cursor-pointer hover:text-secondary">
+          <i class="fa fa-facebook"></i> /ronn.zp
+        </div>
+        <div class="cursor-pointer hover:text-secondary">
+          <i class="fa fa-twitter"></i> @ronn.zp
+        </div>
+        <div class="cursor-pointer hover:text-secondary">
+          <i class="fa fa-instagram"></i> @ronn.zp
+        </div>
+      </div>
+      <ul class="my-3 ml-6 md:list-disc">
+        <li>Soporte</li>
+        <li>Acerca de nosotros</li>
+        <li>Registro</li>
+        <li>Aviso de privacidad</li>
+      </ul>
+    </footer>
+  </body>
+</html>
